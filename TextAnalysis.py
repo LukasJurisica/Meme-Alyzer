@@ -24,13 +24,10 @@ def findText(image):
 		perim = cv.arcLength(contour, True)
 		x, y, w, h = cv.boundingRect(contour)
 		
-		#print(area, perim)
-		
 		if (area > 0.0015 * totalArea):
 			cv.rectangle(im2, (x, y), (x + w, y + h), (0, 0, 255), 2)
 			
-	cv.imshow('Gradient', grad)
-	cv.imshow('Dilated', dilation)		
-	
-	cv.imshow('f d', im2)
+	#cv.imshow('Gradient', grad)
+	#cv.imshow('Dilated', dilation)
+	#cv.imshow('Detected Text', im2)
 	return im2

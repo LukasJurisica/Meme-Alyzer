@@ -30,12 +30,20 @@ def findTemplate(source):
 
 		#Match with K- nearest neighbours
 		matches = bf.knnMatch(desc1, desc2, k = 2)
-		matchMask = np.full((len(matches), 2), 0)
 		
 		score = 0
+		#good_matches = []
+		
 		for i, (m, n) in enumerate(matches):
-			if(m.distance < 0.75 * n.distance):
+			score += 1
+			if(m.distance < 0.7 * n.distance):
 				score += 1
+		#		good_matches.append([m])
+				
+		#img3 = cv.drawMatchesKnn(source,kpt1,target,kpt2,good_matches,None,flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+		#cv.imshow('Temp', img3)
+		#cv.waitKey(0)
+		#cv.destroyAllWindows()
 
 		scores.append(score)
 
