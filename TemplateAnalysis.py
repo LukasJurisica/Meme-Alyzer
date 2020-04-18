@@ -5,7 +5,7 @@ from FastUtils import *
 
 template_path = "./templates/"
 files = os.listdir(template_path)
-comparisonScale = 300 # ---- CHANGE THIS TO 500 FOR PRODUCTION, MAKES IT SLOWER BUT MORE ACCURATE
+comparisonScale = 500
 
 def findTemplate(source):
 	source = cv.cvtColor(source, cv.COLOR_BGR2GRAY)
